@@ -1,4 +1,5 @@
 from pathlib import Path
+import pandas as pd
 
 
 def create_dataframe(csv_file):
@@ -11,6 +12,7 @@ def create_dataframe(csv_file):
         df: A pandas dataframe with the data
 
     """
+    df = pd.read_csv("src/data/paralympics_raw.csv")
     # 1. Complete the code to create a variable called 'df' that is a pandas dataframe that reads its contents from the
     # csv file.
     # Use pandas.read_csv https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html
@@ -18,14 +20,14 @@ def create_dataframe(csv_file):
     # Uncomment the 2 lines of code below to set the pandas display options to show all rows and columns of the dataset
     # Otherwise, by default pandas will only print as many columns and rows as can be displayed in your terminal window
 
-    # pd.set_option('display.max_rows', df.shape[0] + 1)
-    # pd.set_option('display.max_columns', df.shape[1] + 1)
+    pd.set_option('display.max_rows', df.shape[0] + 1)
+    pd.set_option('display.max_columns', df.shape[1] + 1)
 
     # 2. Add a line of code to using Python print() to print the dataframe contents
 
     # 4. Complete the line of code to return the dataframe
+    print(df)
     return
-
 
 if __name__ == '__main__':
     # Use Pathlib.Path to read a file using the location relative to this file
